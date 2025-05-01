@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import ComingSoonDialog from "./ComingSoonDialog";
-import { ExternalLink, Heart, MapPin, Mail } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const Footer: React.FC = () => {
   const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
@@ -15,8 +15,8 @@ const Footer: React.FC = () => {
   return (
     <footer id="contact" className="bg-gradient-to-t from-gray-50 to-white pt-16 pb-8 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="col-span-1 md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="col-span-1">
             <div className="mb-6">
               <a href="#" className="text-2xl font-bold text-zeroprint-green group transition-all duration-300 flex items-center">
                 <span className="group-hover:translate-x-[2px] transition-all">ZeroPrint</span>
@@ -94,48 +94,13 @@ const Footer: React.FC = () => {
                   <span>Join Waitlist</span>
                 </a>
               </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold text-lg mb-4 text-zeroprint-green">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-zeroprint-green" />
-                <a href="mailto:info@zeroprint.co" className="text-gray-600 hover:text-zeroprint-green transition-colors">
-                  info@zeroprint.co
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-zeroprint-green" />
-                <span className="text-gray-600">Mumbai, India</span>
-              </li>
-              <li className="flex items-center gap-3 pt-3">
-                <Heart className="w-5 h-5 text-zeroprint-green" />
-                <span className="text-gray-600">Carbon neutral since 2023</span>
-              </li>
-              <li className="flex items-center gap-3 pt-3">
-                <ExternalLink className="w-5 h-5 text-zeroprint-green" />
-                <a 
-                  onClick={() => handleSocialClick("Blog")} 
-                  className="text-gray-600 hover:text-zeroprint-green transition-colors cursor-pointer"
-                >
-                  Our Blog
-                </a>
+              <li>
+                <button onClick={() => handleSocialClick("Blog")} className="text-gray-600 hover:text-zeroprint-green transition-colors text-left flex items-center gap-1.5 group">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zeroprint-green/30 group-hover:bg-zeroprint-green transition-colors"></span>
+                  <span>Our Blog</span>
+                </button>
               </li>
             </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-gray-200 pt-8 mt-4">
-          <div className="flex flex-col md:flex-row md:justify-between items-center">
-            <p className="text-gray-500 mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} ZeroPrint. All rights reserved.
-            </p>
-            <div className="flex space-x-4">
-              <button onClick={() => handleSocialClick("Privacy Policy")} className="text-sm text-gray-500 hover:text-zeroprint-green transition-colors">Privacy Policy</button>
-              <button onClick={() => handleSocialClick("Terms of Service")} className="text-sm text-gray-500 hover:text-zeroprint-green transition-colors">Terms of Service</button>
-            </div>
           </div>
         </div>
       </div>
