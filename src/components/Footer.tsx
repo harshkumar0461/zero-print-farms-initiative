@@ -1,7 +1,16 @@
 
-import React from "react";
+import React, { useState } from "react";
+import ComingSoonDialog from "./ComingSoonDialog";
 
 const Footer: React.FC = () => {
+  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+  const [socialFeatureName, setSocialFeatureName] = useState("Social Media");
+
+  const handleSocialClick = (name: string) => {
+    setSocialFeatureName(name);
+    setIsComingSoonOpen(true);
+  };
+
   return (
     <footer id="contact" className="bg-gray-50 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
@@ -14,25 +23,25 @@ const Footer: React.FC = () => {
               ZeroPrint combines science & soil to deliver real climate action rooted in India. We empower farmers and fight climate change with every acre of basalt.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-zeroprint-green" aria-label="LinkedIn">
+              <button onClick={() => handleSocialClick("LinkedIn")} className="text-gray-500 hover:text-zeroprint-green transition-colors" aria-label="LinkedIn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
-              </a>
-              <a href="#" className="text-gray-500 hover:text-zeroprint-green" aria-label="Twitter">
+              </button>
+              <button onClick={() => handleSocialClick("Twitter")} className="text-gray-500 hover:text-zeroprint-green transition-colors" aria-label="Twitter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                 </svg>
-              </a>
-              <a href="#" className="text-gray-500 hover:text-zeroprint-green" aria-label="Instagram">
+              </button>
+              <button onClick={() => handleSocialClick("Instagram")} className="text-gray-500 hover:text-zeroprint-green transition-colors" aria-label="Instagram">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
           
@@ -40,19 +49,19 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-600 hover:text-zeroprint-green">Home</a>
+                <a href="#" className="text-gray-600 hover:text-zeroprint-green transition-colors">Home</a>
               </li>
               <li>
-                <a href="#mission" className="text-gray-600 hover:text-zeroprint-green">About</a>
+                <a href="#mission" className="text-gray-600 hover:text-zeroprint-green transition-colors">About</a>
               </li>
               <li>
-                <a href="#solutions" className="text-gray-600 hover:text-zeroprint-green">Our Solutions</a>
+                <button onClick={() => handleSocialClick("Our Solutions")} className="text-gray-600 hover:text-zeroprint-green transition-colors text-left">Our Solutions</button>
               </li>
               <li>
-                <a href="#how-it-works" className="text-gray-600 hover:text-zeroprint-green">How It Works</a>
+                <a href="#how-it-works" className="text-gray-600 hover:text-zeroprint-green transition-colors">How It Works</a>
               </li>
               <li>
-                <a href="#join-waitlist" className="text-gray-600 hover:text-zeroprint-green">Join Waitlist</a>
+                <a href="#join-waitlist" className="text-gray-600 hover:text-zeroprint-green transition-colors">Join Waitlist</a>
               </li>
             </ul>
           </div>
@@ -78,11 +87,11 @@ const Footer: React.FC = () => {
             <div className="mt-6">
               <h3 className="font-semibold text-lg mb-4">Partners</h3>
               <div className="flex flex-wrap gap-4">
-                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100">
-                  <div className="w-16 h-8 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">Logo</div>
+                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
+                  <div className="w-16 h-8 bg-gray-100 rounded flex items-center justify-center text-xs text-gray-500">Partner</div>
                 </div>
-                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100">
-                  <div className="w-16 h-8 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">Logo</div>
+                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
+                  <div className="w-16 h-8 bg-gray-100 rounded flex items-center justify-center text-xs text-gray-500">Partner</div>
                 </div>
               </div>
             </div>
@@ -95,12 +104,18 @@ const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} ZeroPrint. All rights reserved.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-sm text-gray-500 hover:text-zeroprint-green">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-zeroprint-green">Terms of Service</a>
+              <button onClick={() => handleSocialClick("Privacy Policy")} className="text-sm text-gray-500 hover:text-zeroprint-green transition-colors">Privacy Policy</button>
+              <button onClick={() => handleSocialClick("Terms of Service")} className="text-sm text-gray-500 hover:text-zeroprint-green transition-colors">Terms of Service</button>
             </div>
           </div>
         </div>
       </div>
+
+      <ComingSoonDialog
+        open={isComingSoonOpen}
+        onOpenChange={setIsComingSoonOpen}
+        featureName={socialFeatureName}
+      />
     </footer>
   );
 };

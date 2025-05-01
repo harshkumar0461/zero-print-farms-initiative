@@ -1,36 +1,59 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header 
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled 
+          ? "bg-white/95 backdrop-blur-sm shadow-md" 
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:py-6">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="flex items-center">
-              <span className="text-2xl font-bold text-zeroprint-green">ZeroPrint</span>
+            <a href="#" className="flex items-center group">
+              <span className="text-2xl font-bold text-zeroprint-green group-hover:scale-105 transition-transform">ZeroPrint</span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="font-medium hover:text-zeroprint-green">
+            <a href="#" className="font-medium hover:text-zeroprint-green transition-colors border-b-2 border-transparent hover:border-zeroprint-green/30 py-1">
               Home
             </a>
-            <a href="#mission" className="font-medium hover:text-zeroprint-green">
+            <a href="#mission" className="font-medium hover:text-zeroprint-green transition-colors border-b-2 border-transparent hover:border-zeroprint-green/30 py-1">
               About
             </a>
-            <a href="#solutions" className="font-medium hover:text-zeroprint-green">
+            <a href="#solutions" className="font-medium hover:text-zeroprint-green transition-colors border-b-2 border-transparent hover:border-zeroprint-green/30 py-1">
               Our Solutions
             </a>
-            <a href="#how-it-works" className="font-medium hover:text-zeroprint-green">
+            <a href="#how-it-works" className="font-medium hover:text-zeroprint-green transition-colors border-b-2 border-transparent hover:border-zeroprint-green/30 py-1">
               How It Works
             </a>
-            <a href="#contact" className="font-medium hover:text-zeroprint-green">
+            <a href="#contact" className="font-medium hover:text-zeroprint-green transition-colors border-b-2 border-transparent hover:border-zeroprint-green/30 py-1">
               Contact
             </a>
             <a
@@ -66,37 +89,43 @@ const Navbar: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
             <a
               href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-zeroprint-green transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a
               href="#mission"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-zeroprint-green transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               About
             </a>
             <a
               href="#solutions"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-zeroprint-green transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               Our Solutions
             </a>
             <a
               href="#how-it-works"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-zeroprint-green transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </a>
             <a
               href="#contact"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-zeroprint-green transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </a>
             <a
               href="#join-waitlist"
-              className="block px-3 py-3 rounded-md text-center bg-zeroprint-green text-white font-medium"
+              className="block px-3 py-3 rounded-md text-center bg-zeroprint-green text-white font-medium hover:bg-zeroprint-green/90 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               Join The Waitlist
             </a>

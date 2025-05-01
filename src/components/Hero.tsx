@@ -1,8 +1,11 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import ComingSoonDialog from "./ComingSoonDialog";
 
 const Hero: React.FC = () => {
+  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-zeroprint-cream/20 pt-16 pb-20 md:pb-32">
       <div className="section-padding">
@@ -19,9 +22,12 @@ const Hero: React.FC = () => {
               <a href="#join-waitlist" className="btn-primary">
                 Join The Waitlist
               </a>
-              <a href="#solutions" className="btn-secondary">
+              <button 
+                onClick={() => setIsComingSoonOpen(true)}
+                className="btn-secondary"
+              >
                 Explore Projects
-              </a>
+              </button>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6">
@@ -47,6 +53,12 @@ const Hero: React.FC = () => {
       </div>
       
       <div className="absolute -z-10 top-0 left-0 right-0 h-full bg-gradient-to-br from-zeroprint-green/5 to-zeroprint-green/10"></div>
+
+      <ComingSoonDialog
+        open={isComingSoonOpen}
+        onOpenChange={setIsComingSoonOpen}
+        featureName="Explore Projects"
+      />
     </section>
   );
 };

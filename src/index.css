@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -99,6 +99,10 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 @layer components {
@@ -127,15 +131,19 @@
   }
 
   .btn-primary {
-    @apply bg-zeroprint-green hover:bg-zeroprint-green/90 text-white font-medium py-3 px-6 rounded-lg transition-all;
+    @apply bg-zeroprint-green hover:bg-zeroprint-green/90 text-white font-medium py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply border-2 border-zeroprint-green text-zeroprint-green hover:bg-zeroprint-green/10 font-medium py-3 px-6 rounded-lg transition-all;
+    @apply border-2 border-zeroprint-green text-zeroprint-green hover:bg-zeroprint-green/10 font-medium py-3 px-6 rounded-lg transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
   }
   
   .btn-tertiary {
-    @apply text-zeroprint-green hover:text-zeroprint-green/80 font-medium py-2 transition-all flex items-center gap-1;
+    @apply text-zeroprint-green hover:text-zeroprint-green/80 font-medium py-2 transition-all flex items-center gap-1 hover:gap-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 border border-gray-100;
   }
 }
 
@@ -154,5 +162,9 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/70 border border-white/20;
   }
 }
