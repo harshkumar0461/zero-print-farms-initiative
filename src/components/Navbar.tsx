@@ -26,16 +26,19 @@ const Navbar: React.FC = () => {
     <header 
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled 
-          ? "bg-white/95 backdrop-blur-sm shadow-md" 
+          ? "bg-white/90 backdrop-blur-md shadow-md border-b border-gray-100" 
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:py-6">
+        <div className="flex justify-between items-center py-4 md:py-5">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <a href="#" className="flex items-center group">
-              <span className="text-2xl font-bold text-zeroprint-green group-hover:scale-105 transition-transform">ZeroPrint</span>
+              <span className="text-2xl font-bold text-zeroprint-green group-hover:scale-105 transition-transform">
+                <span className="font-black">Zero</span>Print
+                <span className="text-xs align-top bg-zeroprint-green/10 text-zeroprint-green px-2 py-0.5 rounded-full ml-1">beta</span>
+              </span>
             </a>
           </div>
 
@@ -58,9 +61,9 @@ const Navbar: React.FC = () => {
             </a>
             <a
               href="#join-waitlist"
-              className="btn-primary"
+              className="bg-zeroprint-green text-white px-5 py-2 rounded-lg hover:bg-zeroprint-green/90 transition-all transform hover:-translate-y-0.5 shadow-md hover:shadow-lg font-medium ml-2"
             >
-              Join The Waitlist
+              Join Waitlist
             </a>
           </nav>
 
@@ -124,10 +127,10 @@ const Navbar: React.FC = () => {
             </a>
             <a
               href="#join-waitlist"
-              className="block px-3 py-3 rounded-md text-center bg-zeroprint-green text-white font-medium hover:bg-zeroprint-green/90 transition-colors"
+              className="block px-4 py-3 mt-2 rounded-lg text-center bg-zeroprint-green text-white font-medium hover:bg-zeroprint-green/90 transition-colors shadow-md"
               onClick={() => setIsMenuOpen(false)}
             >
-              Join The Waitlist
+              Join Waitlist
             </a>
           </div>
         </div>

@@ -7,52 +7,64 @@ const Hero: React.FC = () => {
   const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-zeroprint-cream/20 pt-16 pb-20 md:pb-32">
+    <section className="relative overflow-hidden py-20 md:py-28 lg:py-32">
       <div className="section-padding">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-fade-in">
-            <h1 className="heading-xl text-zeroprint-green mb-6">
-              Offset Your Carbon Footprint — Empower Indian Farms
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="animate-fade-in space-y-8">
+            <div className="inline-block mb-2 bg-zeroprint-green/10 px-4 py-2 rounded-full">
+              <span className="text-sm font-medium text-zeroprint-green">Carbon Removal That Matters</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-zeroprint-green">
+              Offset Your Carbon Footprint
+              <span className="block text-zeroprint-brown mt-2">Empower Indian Farms</span>
             </h1>
-            <p className="paragraph text-gray-600 mb-8 max-w-2xl">
-              Join the movement to remove 750,000 tonnes of CO₂ by 2030 using Enhanced Rock Weathering (ERW) in India's farmlands.
+            
+            <p className="text-lg text-gray-600 max-w-xl">
+              Join the movement to remove 750,000 tonnes of CO₂ by 2030 using Enhanced Rock Weathering (ERW) 
+              in India's farmlands.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-12">
-              <a href="#join-waitlist" className="btn-primary">
+            <div className="flex flex-wrap gap-5 pt-4">
+              <a href="#join-waitlist" className="btn-primary shadow-lg shadow-zeroprint-green/20 transform transition-all duration-300 hover:scale-[1.02]">
                 Join The Waitlist
               </a>
               <button 
                 onClick={() => setIsComingSoonOpen(true)}
-                className="btn-secondary"
+                className="btn-secondary border-2 transform transition-all duration-300 hover:scale-[1.02]"
               >
                 Explore Projects
               </button>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6">
-              <a href="#business" className="btn-tertiary">
+            <div className="flex flex-col sm:flex-row gap-7 pt-6">
+              <a href="#business" className="btn-tertiary group">
                 <span>For Businesses</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
               </a>
-              <a href="#individual" className="btn-tertiary">
+              <a href="#individual" className="btn-tertiary group">
                 <span>For Individuals</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
           </div>
           
-          <div className="rounded-xl overflow-hidden shadow-2xl animate-fade-in [animation-delay:300ms]">
-            <img
-              src="https://images.unsplash.com/photo-1565457210787-eef50b93b812?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              alt="Indian farmland"
-              className="w-full h-[400px] md:h-[500px] object-cover"
-            />
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden shadow-2xl animate-fade-in [animation-delay:300ms] transform transition-all duration-700 hover:shadow-zeroprint-green/10 hover:-translate-y-1">
+              <img
+                src="https://images.unsplash.com/photo-1565457210787-eef50b93b812?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                alt="Indian farmland"
+                className="w-full h-[400px] md:h-[500px] object-cover"
+              />
+            </div>
+            
+            <div className="absolute -z-10 -inset-4 bg-zeroprint-green/5 rounded-3xl -rotate-3"></div>
           </div>
         </div>
       </div>
       
-      <div className="absolute -z-10 top-0 left-0 right-0 h-full bg-gradient-to-br from-zeroprint-green/5 to-zeroprint-green/10"></div>
+      <div className="absolute -z-10 top-0 left-0 right-0 h-full bg-gradient-to-br from-zeroprint-cream/30 to-zeroprint-green/5"></div>
+      <div className="absolute -z-10 bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-white to-transparent"></div>
 
       <ComingSoonDialog
         open={isComingSoonOpen}
