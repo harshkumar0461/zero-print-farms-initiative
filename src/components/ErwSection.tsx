@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Leaf, Soil, TreeDeciduous } from "lucide-react";
+import { Leaf, Sprout, TreeDeciduous } from "lucide-react";
 
 const ErwSection: React.FC = () => {
   return (
@@ -60,7 +60,7 @@ const ErwSection: React.FC = () => {
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <div className="flex items-start gap-4">
                   <div className="bg-zeroprint-green/10 p-3 rounded-full">
-                    <Soil className="w-6 h-6 text-zeroprint-green" />
+                    <Sprout className="w-6 h-6 text-zeroprint-green" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-gray-800">Soil Health</h3>
