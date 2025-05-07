@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -37,7 +36,6 @@ const Navbar: React.FC = () => {
             <a href="#" className="flex items-center group">
               <span className="text-2xl font-bold text-zeroprint-green group-hover:scale-105 transition-transform">
                 <span className="font-black">Zero</span>Print
-                <span className="text-xs align-top bg-zeroprint-green/10 text-zeroprint-green px-2 py-0.5 rounded-full ml-1">beta</span>
               </span>
             </a>
           </div>

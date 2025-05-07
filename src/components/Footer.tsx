@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import ComingSoonDialog from "./ComingSoonDialog";
 import { ExternalLink } from "lucide-react";
@@ -20,7 +19,6 @@ const Footer: React.FC = () => {
             <div className="mb-6">
               <a href="#" className="text-2xl font-bold text-zeroprint-green group transition-all duration-300 flex items-center">
                 <span className="group-hover:translate-x-[2px] transition-all">ZeroPrint</span>
-                <span className="text-xs align-top bg-zeroprint-green/10 text-zeroprint-green px-2 py-0.5 rounded-full ml-2">beta</span>
               </a>
             </div>
             <p className="text-gray-600 mb-6 max-w-md leading-relaxed">
